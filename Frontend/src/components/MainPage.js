@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useReactTable from "@tanstack/react-table";
 
 const MainPage = ({ onArticleClick }) => {
   const [articles, setArticles] = useState([]);
@@ -34,6 +35,7 @@ const MainPage = ({ onArticleClick }) => {
           </li>
         ))}
       </ul>
+      <useReactTable/>
     </div>
   );
 };
