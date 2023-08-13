@@ -1,23 +1,30 @@
-package com.example.restapi.data.DTO;
+package com.example.restapi.data.Entity;
 
-import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-public class ArticleDTO {
+@Entity
+public class ArticlesEntity {
+//    a.article_id, a.title_id,a.author_id, t.name, t.title, t.subtitle, t.date, t.readtime t.tag
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long article_id;
     private Long title_id;
     private Long author_id;
+
     private String name;
     private String title;
     private String subtitle;
     private String date;
     private int readtime;
     private String tag;
-    private String text;
 
-    public ArticleDTO() {
+    public ArticlesEntity() {
     }
 
-    public ArticleDTO(Long article_id, Long title_id, Long author_id, String name, String title, String subtitle, String date, int readtime, String tag, String text) {
+    public ArticlesEntity(Long article_id, Long title_id, Long author_id, String name, String title, String subtitle, String date, int readtime, String tag) {
         this.article_id = article_id;
         this.title_id = title_id;
         this.author_id = author_id;
@@ -27,23 +34,8 @@ public class ArticleDTO {
         this.date = date;
         this.readtime = readtime;
         this.tag = tag;
-        this.text = text;
     }
 
-    public String toJson() {
-        return "{" +
-                " article_id='" + getArticle_id() + "'" +
-                ", title_id='" + getTitle_id() + "'" +
-                ", author_id='" + getAuthor_id() + "'" +
-                ", name='" + getName() + "'" +
-                ", title='" + getTitle() + "'" +
-                ", subtitle='" + getSubtitle() + "'" +
-                ", date='" + getDate() + "'" +
-                ", readtime='" + getReadtime() + "'" +
-                ", tag='" + getTag() + "'" +
-                ", text='" + getText() + "'" +
-                "}";
-    }
     public Long getArticle_id() {
         return this.article_id;
     }
@@ -68,15 +60,6 @@ public class ArticleDTO {
         this.author_id = author_id;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
     public String getTitle() {
         return this.title;
     }
@@ -92,6 +75,16 @@ public class ArticleDTO {
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
     public String getDate() {
         return this.date;
     }
@@ -115,14 +108,4 @@ public class ArticleDTO {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    public String getText() {
-        return this.text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-
 }

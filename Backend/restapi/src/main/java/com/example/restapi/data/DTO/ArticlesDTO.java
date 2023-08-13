@@ -1,8 +1,7 @@
 package com.example.restapi.data.DTO;
 
-import java.util.Date;
+public class ArticlesDTO {
 
-public class ArticleDTO {
     private Long article_id;
     private Long title_id;
     private Long author_id;
@@ -12,12 +11,11 @@ public class ArticleDTO {
     private String date;
     private int readtime;
     private String tag;
-    private String text;
 
-    public ArticleDTO() {
+    public ArticlesDTO() {
     }
 
-    public ArticleDTO(Long article_id, Long title_id, Long author_id, String name, String title, String subtitle, String date, int readtime, String tag, String text) {
+    public ArticlesDTO(Long article_id, Long title_id, Long author_id, String name, String title, String subtitle, String date, int readtime, String tag) {
         this.article_id = article_id;
         this.title_id = title_id;
         this.author_id = author_id;
@@ -27,23 +25,22 @@ public class ArticleDTO {
         this.date = date;
         this.readtime = readtime;
         this.tag = tag;
-        this.text = text;
     }
 
     public String toJson() {
         return "{" +
-                " article_id='" + getArticle_id() + "'" +
-                ", title_id='" + getTitle_id() + "'" +
-                ", author_id='" + getAuthor_id() + "'" +
-                ", name='" + getName() + "'" +
-                ", title='" + getTitle() + "'" +
-                ", subtitle='" + getSubtitle() + "'" +
-                ", date='" + getDate() + "'" +
-                ", readtime='" + getReadtime() + "'" +
-                ", tag='" + getTag() + "'" +
-                ", text='" + getText() + "'" +
-                "}";
+            " article_id='" + getArticle_id() + "'" +
+            ", title_id='" + getTitle_id() + "'" +
+            ", author_id='" + getAuthor_id() + "'" +
+            ", name='" + getName() + "'" +
+            ", title='" + getTitle() + "'" +
+            ", subtitle='" + getSubtitle() + "'" +
+            ", date='" + getDate() + "'" +
+            ", readtime='" + getReadtime() + "'" +
+            ", tag='" + getTag() + "'" +
+            "}";
     }
+
     public Long getArticle_id() {
         return this.article_id;
     }
@@ -68,15 +65,6 @@ public class ArticleDTO {
         this.author_id = author_id;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
     public String getTitle() {
         return this.title;
     }
@@ -92,6 +80,16 @@ public class ArticleDTO {
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
     public String getDate() {
         return this.date;
     }
@@ -115,14 +113,4 @@ public class ArticleDTO {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    public String getText() {
-        return this.text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-
 }
