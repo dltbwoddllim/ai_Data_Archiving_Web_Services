@@ -60,6 +60,9 @@ public class RestapiApplicationTests {
 		// Act
 		String jsonResult = articleService.getLatestArticles();
 
+		System.out.println(jsonResult);
+
+
 		// Assert
 		// Add your assertion here to check if the JSON result matches your expectations
 	}
@@ -80,6 +83,7 @@ public class RestapiApplicationTests {
 
 		// Act
 		String jsonResult = articleService.getArticle(articleId);
+		System.out.println(jsonResult);
 
 		// Assert
 		// Add your assertion here to check if the JSON result matches your expectations

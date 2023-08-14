@@ -8,7 +8,7 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.OPTIONS})
 public class ArticleController {
-    @GetMapping("/main")
+    @GetMapping("/articles")
     public ResponseEntity<String> getLatestArticles() {
         String articles = ArticleService.getLatestArticles();
         return ResponseEntity.ok(articles);

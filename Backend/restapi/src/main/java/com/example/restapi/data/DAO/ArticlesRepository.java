@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ArticlesRepository extends JpaRepository<ArticlesEntity, Long> {
-    @Query(value = "SELECT a.article_id, a.title_id,a.author_id, t.name, t.title, t.subtitle, t.date, t.readtime, t.tag\n" +
+    @Query(value = "SELECT a.article_id, a.title_id,a.author_id, au.name, t.title, t.subtitle, t.date, t.readtime, t.tag\n" +
             "FROM article a\n" +
             "JOIN author au ON a.author_id = au.author_id\n" +
             "JOIN title t ON a.title_id = t.title_id\n" +
